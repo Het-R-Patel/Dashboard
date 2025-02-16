@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary-dark: #35374B;
+            --secondary-dark: #344955;
+            --accent-blue: #50727B;
+            --accent-green: #78A083;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex h-screen">
+        <!-- Sidebar -->
+        <aside class="w-64 bg-[var(--primary-dark)] text-white p-5 hidden md:block">
+            <h2 class="text-xl font-bold">Dashboard</h2>
+            <ul class="mt-5 space-y-4">
+                <li class="hover:bg-[var(--accent-blue)] p-2 rounded cursor-pointer">Home</li>
+                <li class="hover:bg-[var(--accent-blue)] p-2 rounded cursor-pointer">Tasks</li>
+                <li class="hover:bg-[var(--accent-blue)] p-2 rounded cursor-pointer">Activity Log</li>
+                <li class="hover:bg-[var(--accent-blue)] p-2 rounded cursor-pointer">Settings</li>
+            </ul>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="flex-1">
+            <!-- Top Navigation -->
+            <header class="bg-[var(--secondary-dark)] text-white p-4 flex justify-between items-center">
+                <input type="text" placeholder="Search..." class="p-2 rounded bg-gray-700 text-white">
+                <div class="flex items-center gap-4">
+                    <button class="bg-[var(--accent-blue)] px-4 py-2 rounded">Notifications</button>
+                    <div class="bg-gray-700 p-2 rounded">User</div>
+                </div>
+            </header>
+            
+            <!-- Summary Cards -->
+            <section class="p-5 grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white p-5 shadow rounded">Total Users: 120</div>
+                <div class="bg-white p-5 shadow rounded">Active Tasks: 15</div>
+                <div class="bg-white p-5 shadow rounded">Completed Projects: 8</div>
+            </section>
+            
+            <!-- Table -->
+            <section class="p-5">
+                <div class="bg-white p-5 shadow rounded">
+                    <h3 class="text-lg font-semibold mb-3">Task List</h3>
+                    <table class="w-full border-collapse border border-gray-300">
+                        <thead>
+                            <tr class="bg-[var(--accent-green)] text-white">
+                                <th class="border p-2">Task</th>
+                                <th class="border p-2">Status</th>
+                                <th class="border p-2">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">Fix UI Bug</td>
+                                <td class="border p-2">In Progress</td>
+                                <td class="border p-2">
+                                    <button class="bg-[var(--accent-blue)] text-white px-3 py-1 rounded">Edit</button>
+                                    <button class="bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <footer class="p-4 bg-[var(--secondary-dark)] text-white text-center">
+                &copy; 2025 Your Company | Privacy Policy | Support
+            </footer>
+        </main>
+    </div>
+</body>
+</html>
